@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard-Formular zur Wochen-Konfiguration -->
+    <record id="view_event_week_config_form" model="ir.ui.view">
+        <field name="name">event.week.config.form</field>
+        <field name="model">event.week.config</field>
+        <field name="arch" type="xml">
+            <form string="Wochen-Veranstaltung erstellen">
+                <group>
+                    <field name="week_start" />
+                    <field name="week_template_id" />
+                    <button name="action_load_week_template" type="object"
+                            string="Template laden" class="btn-primary"
+                            attrs="{'invisible': [('week_template_id', '=', False)]}" />
+                </group>
+                <group>
+                    <field name="line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="start_datetime"/>
+                            <field name="end_datetime"/>
+                            <field name="event_template_id"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button string="Erstellen" type="object" name="action_create_events" class="btn-primary"/>
+                    <button string="Abbrechen" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Wizard-Aktion -->
+    <record id="action_event_week_config" model="ir.actions.act_window">
+        <field name="name">Wochen-Veranstaltung erstellen</field>
+        <field name="res_model">event.week.config</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menüpunkt für den Wizard (optional) -->
+    <menuitem id="menu_event_week_config"
+              name="Wochen-Events erstellen"
+              parent="event.menu_event_root"
+              action="action_event_week_config"/>
+</odoo>

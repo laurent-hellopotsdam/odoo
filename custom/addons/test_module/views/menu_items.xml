@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem name="Test Modell" id="menu_root_test_model">
+        <menuitem id="menu_test_module" name="Test erstellen" action="test_module.action_test_model">
+        </menuitem>
+    </menuitem>
+</odoo>
