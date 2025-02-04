@@ -9,8 +9,12 @@
     'category': 'Events',
     'depends': ['base', 'event'],
     'data': [
+        'security/ir.model.access.csv',
         'views/event_week_config_view.xml',
         'views/event_week_template_view.xml',
+        'views/event_week_menu.xml'
+
+
     ],
     'installable': True,
     'application': False,

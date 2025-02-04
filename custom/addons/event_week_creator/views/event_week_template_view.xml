@@ -13,13 +13,38 @@
                     <notebook>
                         <page string="Zeitslots">
                             <field name="week_line_ids">
-                                <tree editable="bottom">
+                                 <kanban default_group_by="day_of_week" >
                                     <field name="name"/>
-                                    <field name="day_of_week"/>
-                                    <field name="start_time"/>
-                                    <field name="end_time"/>
                                     <field name="event_template_id"/>
-                                </tree>
+                                    <field name="start_time" widget="float_time" />
+                                    <field name="end_time" widget="float_time"/>
+                                    <field name="day_of_week" widget="selection"/>
+
+
+                                    <templates>
+                                        <t t-name="card">
+                                            <div class="oe_kanban_card">
+                                                <strong><t t-esc="record.name.value"/></strong>
+                                                <div>Vorlage: <t t-esc="record.event_template_id.value"/></div>
+                                                <div>Start: <t t-esc="record.start_time.value"/></div>
+                                                <div>Ende: <t t-esc="record.end_time.value"/></div>
+                                            </div>
+                                        </t>
+                                        <t t-name="kanban-group">
+                                            <div class="oe_kanban_group">
+                                                <strong>
+                                                    <t t-if="group.value == 0">Montag</t>
+                                                    <t t-if="group.value == 1">Dienstag</t>
+                                                    <t t-if="group.value == 2">Mittwoch</t>
+                                                    <t t-if="group.value == 3">Donnerstag</t>
+                                                    <t t-if="group.value == 4">Freitag</t>
+                                                    <t t-if="group.value == 5">Samstag</t>
+                                                    <t t-if="group.value == 6">Sonntag</t>
+                                                </strong>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
                             </field>
                         </page>
                     </notebook>
@@ -29,13 +54,13 @@
     </record>
 
     <!-- Listenansicht für Wochen-Templates -->
-    <record id="view_event_week_template_tree" model="ir.ui.view">
-        <field name="name">event.week.template.tree</field>
+    <record id="view_event_week_template_list" model="ir.ui.view">
+        <field name="name">event.week.template.list</field>
         <field name="model">event.week.template</field>
         <field name="arch" type="xml">
-            <tree>
+            <list string="Wochen-Template Liste">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -43,11 +68,8 @@
     <record id="action_event_week_template" model="ir.actions.act_window">
         <field name="name">Wochen-Templates</field>
         <field name="res_model">event.week.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_event_week_template"
-              name="Wochen-Templates"
-              parent="event.menu_event_root"
-              action="action_event_week_template"/>
+
 </odoo>

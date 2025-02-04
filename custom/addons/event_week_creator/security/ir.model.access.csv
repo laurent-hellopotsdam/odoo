@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_event_week_config,access_event_week_config,model_event_week_config,base.group_user,1,1,1,1
+access_event_week_config_line,access_event_week_config_line,model_event_week_config_line,base.group_user,1,1,1,1
+access_event_week_template,access_event_week_template,model_event_week_template,base.group_user,1,1,1,1
+access_event_week_template_line,access_event_week_template_line,model_event_week_template_line,base.group_user,1,1,1,1

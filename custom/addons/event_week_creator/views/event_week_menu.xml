@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <menuitem id="menu_event_week_config"
+              name="Wochen-Events erstellen"
+              parent="event.menu_event_configuration"
+              action="event_week_creator.action_event_week_config"/>
+
+    <menuitem id="menu_event_week_template"
+              name="Wochen-Templates"
+              parent="event.menu_event_configuration"
+              action="event_week_creator.action_event_week_template"/>
+</odoo>
