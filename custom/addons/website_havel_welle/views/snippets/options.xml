@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="custom_snippets" inherit_id="website.snippets" name="Custom Snippets">
+    <xpath expr="//snippets[@id='snippet_content']//t[@t-snippet][last()]" position="after">
+
+
+                    <t t-snippet="website_havel_welle.s_flick_flack" >
+                        <keywords>Snippet, Text, Image</keywords>
+                    </t>
+
+
+
+    </xpath>
+  </template>
+
+  <template id="s_flick_flack_options" inherit_id="website.snippet_options">
+    <xpath expr="." position="inside">
+      <div data-selector=".s_flick_flack .row">
+        <we-select string="Reihenfolge">
+          <we-button data-select-class="text_first" >Text - Bild</we-button>
+          <we-button data-select-class="image_first">Bild - Text</we-button>
+        </we-select>
+      </div>
+    </xpath>
+  </template>
+</odoo>
+

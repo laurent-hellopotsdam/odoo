@@ -1,0 +1,25 @@
+.s_flick_flack {
+  .row {
+    display: flex;
+    flex-wrap: wrap; // Damit es auf mobilen Geräten umbricht
+
+  }
+
+   .row.image_first{
+      .text-block {
+        order: 2; // Text danach
+      }
+      .image-block {
+        order: 1; // Bild zuerst
+      }
+    }
+
+    .row.text_first{
+      .text-block {
+        order: 1; // Text zuerst
+      }
+      .image-block {
+        order: 2; // Bild danach
+      }
+    }
+}

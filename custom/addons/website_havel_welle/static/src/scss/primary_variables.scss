@@ -1,3 +1,25 @@
+
+
+
 $o-theme-font-configs: map-merge($o-theme-font-configs, (
   'BalooBhaina': ('family' : ('BalooBhaina'))
-))
+));
+
+
+$o-color-palettes: map-merge($o-color-palettes, (
+  'havelwelle' : (
+          'o-color-1' : #cc9c45,
+          'o-color-2' :  #2b3136,
+          'o-color-3' : #69bfe7,
+          'o-color-4' : #ffffff,
+          'o-color-5' : #136ea6
+  )
+));
+
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'havelwelle');
+
+$o-website-values-palettes: (
+   (
+      'color-palettes-name':              'havelwelle',
+   ),
+);

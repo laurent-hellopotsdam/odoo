@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Das Template definiert hier das Snippet -->
+  <template id="s_flick_flack" name="Flick Flack" >
+    <!-- Ersetze den Bereich, der den Snippet-Inhalt darstellt -->
+
+      <section class="s_flick_flack" data-snippet="s_flick_flack" data-name="Flick Flack">
+        <div class="container">
+          <div class="row">
+            <!-- Text-Block -->
+            <div class="col-md-6 text-block" >
+              <h2 >Überschrift</h2>
+              <p >Dein Text …</p>
+            </div>
+            <!-- Bild-Block -->
+            <div class="col-md-6 image-block" >
+              <img  alt="Bild"/>
+            </div>
+          </div>
+        </div>
+      </section>
+  </template>
+</odoo>
